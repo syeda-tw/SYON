@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body 
-        className={`${sora.variable} ${workSans.variable} antialiased bg-background text-text min-h-screen flex flex-col`}
+        className={`${sora.variable} ${workSans.variable} antialiased gradient-bg-main text-text min-h-screen flex flex-col`}
         suppressHydrationWarning={true}
       >
         {/* Top Bar */}
-        <header className="bg-surface-elevated border-b-2 border-border">
+        <header className="glass border-b-4 border-black/25">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
@@ -59,12 +59,12 @@ export default function RootLayout({
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 bg-surface">
+        <main className="flex-1 bg-transparent">
           {children}
         </main>
 
         {/* Footer */}
-        <footer className="bg-surface-elevated border-t border-border py-6">
+        <footer className="glass-light border-t-4 border-black/20 py-6">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
               <div className="flex items-center space-x-2">

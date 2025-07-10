@@ -172,15 +172,19 @@ body {
 
 /* Gradient Styles */
 .gradient-bg-main {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+  background: linear-gradient(135deg, #fef7ff 0%, #f0f9ff 25%, #ecfdf5 50%, #fefce8 75%, #fff7ed 100%);
 }
 
 .gradient-bg-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(241,245,249,0.95) 50%, rgba(226,232,240,0.9) 100%);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .gradient-bg-card-hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 50%, rgba(241,245,249,0.95) 100%);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .gradient-border {
@@ -200,64 +204,104 @@ body {
   -webkit-mask-composite: xor;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #718096 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Solid Color Text Classes - Replacing Gradients */
+.text-primary {
+  color: var(--primary);
 }
 
-.gradient-text-accent {
-  background: linear-gradient(135deg, #e2948a 0%, #d69e2e 50%, #90a4b7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.text-primary-vibrant {
+  color: #1A365D; /* Deeper, more vibrant version of primary */
 }
 
-.btn-gradient-primary {
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-  color: white;
-  border: none;
-  position: relative;
-  overflow: hidden;
+.text-secondary {
+  color: var(--secondary);
 }
 
-.btn-gradient-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
+.text-secondary-vibrant {
+  color: #C05621; /* More vibrant orange-red */
 }
 
-.btn-gradient-primary:hover::before {
-  left: 100%;
+.text-accent {
+  color: var(--accent);
 }
 
-.btn-gradient-secondary {
-  background: linear-gradient(135deg, #e2948a 0%, #f7d794 100%);
+.text-accent-vibrant {
+  color: #2B6CB0; /* More vibrant blue */
+}
+
+.text-heading {
   color: var(--text);
-  border: none;
-  position: relative;
-  overflow: hidden;
+  font-weight: 600;
 }
 
-.btn-gradient-secondary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
+.text-heading-vibrant {
+  color: #0F172A; /* Even darker for more contrast */
 }
 
-.btn-gradient-secondary:hover::before {
-  left: 100%;
+/* Background Color Variations for Pop */
+.bg-primary-vibrant {
+  background-color: #1A365D;
+}
+
+.bg-secondary-vibrant {
+  background-color: #C05621;
+}
+
+.bg-accent-vibrant {
+  background-color: #2B6CB0;
+}
+
+/* Button Classes - Replacing Gradients */
+.btn-primary-vibrant {
+  background: #1A365D;
+  color: var(--background);
+  border-color: #1A365D;
+}
+
+.btn-primary-vibrant:hover {
+  background: var(--text);
+  border-color: var(--text);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-secondary-vibrant {
+  background: #C05621;
+  color: white;
+  border-color: #C05621;
+}
+
+.btn-secondary-vibrant:hover {
+  background: #A0471A;
+  border-color: #A0471A;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Remove any potential box shadows and ensure no shadow utilities */
+* {
+  box-shadow: none !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+/* Glassmorphism Utility Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 

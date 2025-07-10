@@ -8,25 +8,24 @@ import {
   JusticeScale01Icon,
   BoatIcon,
 } from "hugeicons-react";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen gradient-bg-main text-slate-800">
+    <main className="min-h-screen text-slate-800">
       <div className="max-w-7xl mx-auto px-8 py-20 space-y-20">
         {/* Hero Section */}
         <div className="text-center space-y-8">
           <div className="space-y-6">
             <h1
-              className="text-8xl font-extralight gradient-text tracking-wider"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-8xl font-extralight text-heading-vibrant tracking-wider"
             >
               SYON
             </h1>
             <p
-              className="text-4xl gradient-text-accent font-light tracking-wide"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-4xl text-secondary-vibrant font-light tracking-wide"
             >
-              Should You Take This Project?
+              Say Yes or No?
             </p>
           </div>
 
@@ -39,10 +38,9 @@ export default function Home() {
         </div>
 
         {/* Main Value Proposition */}
-        <div className="gradient-bg-card rounded-3xl border-2 border-border p-16 text-center space-y-10 hover:gradient-bg-card-hover transition-all duration-500">
+        <div className="gradient-bg-card rounded-3xl p-16 text-center space-y-10 hover:gradient-bg-card-hover transition-all duration-500">
           <h2
-            className="text-5xl font-normal gradient-text mb-8 tracking-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-5xl font-normal text-primary-vibrant mb-8 tracking-tight"
           >
             Get Your Project Decision in Minutes
           </h2>
@@ -54,7 +52,7 @@ export default function Home() {
             </p>
             <p className="text-xl text-slate-600 leading-relaxed">
               Our assessment evaluates your project opportunity across four key factors and gives you a 
-              <span className="font-medium gradient-text-accent">
+              <span className="font-medium text-accent-vibrant">
                 {" "}
                 clear yes or no recommendation
               </span>
@@ -63,27 +61,26 @@ export default function Home() {
           </div>
 
           <div className="pt-8">
-            <button className="btn btn-gradient-primary btn-large btn-pill transition-all duration-300">
+            <Link href="/quiz" className="btn btn-primary-vibrant btn-large btn-pill transition-all duration-300">
               Take The Test
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* Decision Framework */}
         <div className="space-y-16">
           <h3
-            className="text-5xl font-light gradient-text text-center tracking-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-5xl font-light text-primary-vibrant text-center tracking-tight"
           >
             How We Evaluate Your Project
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
-            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 border-2 border-border hover:gradient-bg-card-hover hover:border-border-heavy transition-all duration-500">
+            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 hover:gradient-bg-card-hover transition-all duration-500">
               <div className="flex justify-center mb-6">
-                <Search01Icon size={56} className="text-slate-600" />
+                <Search01Icon size={56} className="text-blue-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Scope Clarity
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -91,11 +88,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 border-2 border-border hover:gradient-bg-card-hover hover:border-border-heavy transition-all duration-500">
+            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 hover:gradient-bg-card-hover transition-all duration-500">
               <div className="flex justify-center mb-6">
-                <JusticeScale01Icon size={56} className="text-slate-600" />
+                <JusticeScale01Icon size={56} className="text-emerald-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Budget vs Effort
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -103,11 +100,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 border-2 border-border hover:gradient-bg-card-hover hover:border-border-heavy transition-all duration-500">
+            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 hover:gradient-bg-card-hover transition-all duration-500">
               <div className="flex justify-center mb-6">
-                <Settings02Icon size={56} className="text-slate-600" />
+                <Settings02Icon size={56} className="text-purple-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Technical Fit
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -115,11 +112,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 border-2 border-border hover:gradient-bg-card-hover hover:border-border-heavy transition-all duration-500">
+            <div className="gradient-bg-card rounded-2xl p-10 text-center space-y-6 hover:gradient-bg-card-hover transition-all duration-500">
               <div className="flex justify-center mb-6">
-                <Clock01Icon size={56} className="text-slate-600" />
+                <Clock01Icon size={56} className="text-orange-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Timeline & Capacity
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -130,10 +127,9 @@ export default function Home() {
         </div>
 
         {/* Philosophy Section */}
-        <div className="gradient-bg-card rounded-3xl p-16 space-y-12 border-2 border-border hover:gradient-bg-card-hover transition-all duration-500">
+        <div className="gradient-bg-card rounded-3xl p-16 space-y-12 hover:gradient-bg-card-hover transition-all duration-500">
           <h3
-            className="text-5xl font-light gradient-text text-center mb-12 tracking-tight"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-5xl font-light text-primary-vibrant text-center mb-12 tracking-tight"
           >
             Smart Decision-Making
           </h3>
@@ -141,9 +137,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 max-w-6xl mx-auto">
             <div className="text-center space-y-6">
               <div className="flex justify-center mb-4">
-                <BoatIcon size={48} className="text-slate-600" />
+                <BoatIcon size={48} className="text-cyan-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Quick Assessment
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -153,9 +149,9 @@ export default function Home() {
 
             <div className="text-center space-y-6">
               <div className="flex justify-center mb-4">
-                <UserGroupIcon size={48} className="text-slate-600" />
+                <UserGroupIcon size={48} className="text-rose-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Clear Recommendation
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -165,9 +161,9 @@ export default function Home() {
 
             <div className="text-center space-y-6">
               <div className="flex justify-center mb-4">
-                <SparklesIcon size={48} className="text-slate-600" />
+                <SparklesIcon size={48} className="text-amber-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Data-Driven Insights
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -177,9 +173,9 @@ export default function Home() {
 
             <div className="text-center space-y-6">
               <div className="flex justify-center mb-4">
-                <Target01Icon size={48} className="text-slate-600" />
+                <Target01Icon size={48} className="text-indigo-600" />
               </div>
-              <h4 className="text-2xl font-semibold gradient-text mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Better Project Outcomes
               </h4>
               <p className="text-slate-600 leading-relaxed">
@@ -195,9 +191,9 @@ export default function Home() {
             Stop second-guessing project opportunities. Get a clear recommendation 
             on whether you should take that project in just a few minutes.
           </p>
-          <button className="btn btn-gradient-secondary btn-xl btn-pill transition-all duration-300">
+          <Link href="/quiz" className="btn btn-secondary-vibrant btn-xl btn-pill transition-all duration-300">
             Take The Test ✨
-          </button>
+          </Link>
         </div>
       </div>
     </main>

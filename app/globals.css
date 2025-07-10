@@ -1,26 +1,263 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors - Updated to muted and heavy tones */
+  --primary: #2D3748;     /* darker blue-gray for strong presence */
+  --secondary: #E2948A;   /* muted terracotta for subtle warmth */
+  --accent: #90A4B7;      /* muted blue-gray for gentle prompts */
+  --background: #F7F8FA;  /* very light gray for softer background */
+  --text: #1A202C;        /* very dark gray for strong contrast */
+  
+  /* Typography */
+  --font-heading: var(--font-sora);
+  --font-body: var(--font-work-sans);
+  
+  /* Spacing & Design */
+  --radius: 0.5rem;       /* 8px rounded corners */
+  --border-width: 2px;    /* heavier borders instead of shadows */
+  --border-width-thick: 3px; /* even thicker for emphasis */
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text: var(--text);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-border-heavy: var(--border-heavy);
+  --color-muted: var(--muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Updated with muted surface colors and heavy borders */
+:root {
+  /* Override with muted surface colors */
+  --surface: #EBEDF0;     /* muted light gray for cards/surfaces */
+  --surface-elevated: #F1F3F5; /* slightly elevated muted surface */
+  --border: #C1C7CD;      /* medium gray border */
+  --border-heavy: #9CA3AF; /* heavier border for emphasis */
+  --muted: #4A5568;       /* heavier muted text color */
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
 }
+
+/* Utility classes for consistent styling */
+.rounded-default { border-radius: var(--radius); }
+.border-default { border: var(--border-width) solid var(--border); }
+.border-heavy { border: var(--border-width-thick) solid var(--border-heavy); }
+
+/* Button Classes */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: var(--border-width) solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Button Size Variants */
+.btn-large {
+  padding: 1rem 3rem;
+  font-size: 1.125rem; /* text-lg */
+}
+
+.btn-xl {
+  padding: 1.25rem 4rem;
+  font-size: 1.25rem; /* text-xl */
+}
+
+/* Button Shape Variants */
+.btn-pill {
+  border-radius: 9999px; /* rounded-full */
+}
+
+/* Button Color Variants */
+.btn-primary {
+  background: var(--primary);
+  color: var(--background);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--text);
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: color-mix(in srgb, var(--secondary) 80%, black);
+  border-color: var(--muted);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-ghost:hover {
+  background: var(--primary);
+  color: var(--background);
+  border-color: var(--primary);
+}
+
+/* Switch Component */
+.switch {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  background: var(--accent);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border: var(--border-width) solid var(--border);
+}
+
+.switch.active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  border: 1px solid var(--border);
+}
+
+.switch.active .switch-thumb {
+  transform: translateX(1.5rem);
+}
+
+/* Select Component */
+.select {
+  padding: 0.75rem 1rem;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--primary);
+  border-width: var(--border-width-thick);
+}
+
+/* Gradient Styles */
+.gradient-bg-main {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+}
+
+.gradient-bg-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(241,245,249,0.95) 50%, rgba(226,232,240,0.9) 100%);
+}
+
+.gradient-bg-card-hover {
+  background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 50%, rgba(241,245,249,0.95) 100%);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(241,245,249,0.95));
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(145deg, #cbd5e1, #94a3b8, #64748b);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #718096 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #e2948a 0%, #d69e2e 50%, #90a4b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-gradient-primary:hover::before {
+  left: 100%;
+}
+
+.btn-gradient-secondary {
+  background: linear-gradient(135deg, #e2948a 0%, #f7d794 100%);
+  color: var(--text);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-gradient-secondary:hover::before {
+  left: 100%;
+}
+
+

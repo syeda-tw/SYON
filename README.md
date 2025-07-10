@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SYON
 
-## Getting Started
+**Say Yes or No**
 
-First, run the development server:
+A minimal decision-making app for developers who need clarity, not complexity.
+
+## What is SYON?
+
+SYON helps you pause, reflect, and make clear yes/no decisions. Built for developers who deal with constant choices—features to build, tools to try, opportunities to pursue—and need a simple way to cut through the noise.
+
+No elaborate frameworks. No decision trees. Just: *Should I do this? Yes or No.*
+
+## How it works
+
+1. **Ask yourself a question** — "Should I build this feature?"
+2. **Take a moment** — Let the question sit
+3. **Decide** — Yes or No
+4. **Move forward** — Track your decisions quietly in the background
+
+SYON doesn't judge your choices. It just helps you make them clearly and move on.
+
+## Tech Stack
+
+- **Next.js 15** with App Router
+- **Tailwind CSS** for minimal, clean styling  
+- **TypeScript** for reliability
+- **Zustand** for lightweight state management
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to start making decisions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Philosophy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Decision fatigue is real. SYON believes in:
 
-## Learn More
+- **Simplicity over features** — Binary choices are often the clearest
+- **Reflection over reaction** — Take a beat before deciding
+- **Progress over perfection** — Done is better than perfect
+- **Flow over friction** — Get in, decide, get out
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MIT — Build what you want with it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*SYON is a side project built with care, not scale. It does one thing: helps you decide.*
